@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <!-- Bootstrap 5 CSS CDN link -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <!-- CSS Custom Link -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <ul class="nav nav-pills justify-content-center">
+            <li class="nav-item">
+                <a href="#Create" class="nav-link active" data-bs-toggle="pill">CREATE</a>
+            </li>
+            <li class="nav-item">
+                <a href="#Read" class="nav-link" data-bs-toggle="pill" onclick="readRecord()">READ</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <!-- Create Table -->
+            <div id="Create" class="tab-pane fade show active">
+                <h1 class="text-center text-primary mt-5">INSERT STUDENT RECORD</h1>
+                <form class="form" autocomplete="off">
+                    <div class="form-group mt-3">
+                        <label>STUDENT ID</label>
+                        <input type="text" id="stdID" class="form-control">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label>STUDENT NAME</label>
+                        <input type="text" id="stdName" class="form-control">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label>STUDENT CLASS</label>
+                        <input type="text" id="stdClass" class="form-control">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label>STUDENT CGPA</label>
+                        <input type="text" id="stdCGPA" class="form-control">
+                    </div>
+                    <div class="form-group mt-3">
+                        <button type="button" class="btn btn-primary" onclick="createRecord()">Create</button>
+                    </div>
+                    <p id="msg" class="text-center text-danger mt-5"></p>
+                </form>
+            </div>
+            <!-- Read Tab -->
+            <div id="Read" class="tab-pane fade">
+                <h1 class="text-center text-primary mt-5">READ STUDENT RECORD</h1>
+                <div class="form-group mt-3">
+                    <input type="text" id="searchID" class="form-control" placeholder="Search by Student ID">
+                    <button type="button" class="btn btn-primary mt-2" onclick="searchRecord()">Search</button>
+                </div>
+                <table id="readTable" class="table table-bordered mt-3">
+                    <thead>
+                        <tr>
+                            <th>STUDENT ID</th>
+                            <th>NAME</th>
+                            <th>CLASS</th>
+                            <th>CGPA</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5">No Record Found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap 5 JavaScript CDN link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="indexProjectSchool.js"></script>
+</body>
+</html>
